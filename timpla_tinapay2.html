@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timpla ng Tinapay - Aking Resipe</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            background: #1a1a1a;
+            color: #f9dc5c;
+            padding: 30px 20px;
+            max-width: 700px;
+            margin: 30px auto;
+            border: 2px solid #f9dc5c;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(249, 220, 92, 0.3);
+        }
+        h1 { text-align: center; margin-bottom: 25px; color: #80d8f7; font-size: 22px; }
+        .menu-item {
+            display: block;
+            color: #f9dc5c;
+            text-decoration: none;
+            padding: 6px 10px;
+            margin: 4px 0;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        .menu-item:hover { background: #333; color: #80d8f7; }
+        .resipe-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            display: none;
+            border-left: 3px solid #80d8f7;
+        }
+        .resipe-box h2 { color: #80d8f7; margin-bottom: 15px; text-align: center; font-size: 18px; }
+        .bahagi { margin-bottom: 15px; }
+        .bahagi h3 { margin-bottom: 8px; color: #f2b705; font-size: 15px; }
+        .sangkap { display: flex; justify-content: space-between; padding: 3px 0; font-size: 14px; }
+        .balik {
+            display: inline-block;
+            margin-top: 20px;
+            color: #888;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+        .balik:hover { color: #f9dc5c; border-color: #f9dc5c; }
+        .proseso { line-height: 1.6; color: #ddd; white-space: pre-line; }
+    </style>
+</head>
+<body>
+
+<!-- PANGUNAHING MENU -->
+<div id="mainMenu">
+    <h1>===============================<br>      PUMILI NG GUSTO      <br>===============================</h1>
+    <a href="#" class="menu-item" onclick="ipakita('pineapple'); return false;">[ 1 ] PINEAPPLE</a>
+    <a href="#" class="menu-item" onclick="ipakita('kababayan'); return false;">[ 2 ] KABABAYAN</a>
+    <a href="#" class="menu-item" onclick="ipakita('torta'); return false;">[ 3 ] TORTA</a>
+    <a href="#" class="menu-item" onclick="ipakita('brownies'); return false;">[ 4 ] BROWNIES ICING</a>
+    <a href="#" class="menu-item" onclick="ipakita('eggpie'); return false;">[ 5 ] EGG PIE</a>
+    <a href="#" class="menu-item" onclick="ipakita('yemma'); return false;">[ 6 ] YEMMA ICING</a>
+    <a href="#" class="menu-item" onclick="ipakita('pabalat'); return false;">[ 7 ] PABALAT NG MALAMBOT</a>
+    <a href="#" class="menu-item" onclick="ipakita('donutpalaman'); return false;">[ 8 ] DONUT PALAMAN</a>
+    <a href="#" class="menu-item" onclick="ipakita('chess'); return false;">[ 9 ] CHESS ROLL</a>
+    <a href="#" class="menu-item" onclick="ipakita('crinkles'); return false;">[ 0 ] CRINKLES</a>
+    <a href="#" class="menu-item" onclick="ipakita('donutchoco'); return false;">[ A ] DONUT POWDER CHOCO</a>
+    <a href="#" class="menu-item" onclick="ipakita('donutube'); return false;">[ B ] DONUT POWDER UBE</a>
+    <a href="#" class="menu-item" onclick="ipakita('pandesal'); return false;">[ C ] PANDESAL</a>
+    <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ D ] PROSESO</a>
+</div>
+
+<!-- MENU PARA SA PROSESO -->
+<div id="procMenu" style="display:none;">
+    <h1>===============================<br>   PUMILI NG PROSESO   <br>===============================</h1>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_pine'); return false;">[ 1 ] PROSESO NG PINEAPPLE</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_kaba'); return false;">[ 2 ] PROSESO NG KABABAYAN</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_tor'); return false;">[ 3 ] PROSESO NG TORTA</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_bro'); return false;">[ 4 ] PROSESO NG BROWNIES ICING</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_egg'); return false;">[ 5 ] PROSESO NG EGG PIE</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_yem'); return false;">[ 6 ] PROSESO NG YEMMA ICING</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_pab'); return false;">[ 7 ] PROSESO NG PABALAT NG MALAMBOT</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_donpal'); return false;">[ 8 ] PROSESO NG DONUT PALAMAN</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_che'); return false;">[ 9 ] PROSESO NG CHESS ROLL</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_crin'); return false;">[ 0 ] PROSESO NG CRINKLES</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_doncho'); return false;">[ A ] PROSESO NG DONUT POWDER CHOCO</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_donub'); return false;">[ B ] PROSESO NG DONUT POWDER UBE</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_donub'); return false;">[ C ] PROSESO NG PANDESAL</a>
+    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ D ] BALIK SA MENU</a>
+</div>
+
+<!-- LAHAT NG RESIPE -->
+<div id="pineapple" class="resipe-box">
+    <h2>PINEAPPLE PIE</h2>
+    <div class="bahagi">
+        <h3>PABALAT</h3>
+        <div class="sangkap"><span>1st class</span><span>650 g</span></div>
+        <div class="sangkap"><span>3rd class</span><span>100 g</span></div>
+        <div class="sangkap"><span>Asukal</span><span>150 g</span></div>
+        <div class="sangkap"><span>Asin</span><span>8 g</span></div>
+        <div class="sangkap"><span>Yeast</span><span>1/2 tbsp</span></div>
+        <div class="sangkap"><span>Baking</span><span>1/2 tbsp</span></div>
+        <div class="sangkap"><span>Tubig</span><span>3/4 can</span></div>
+        <div class="sangkap"><span>Lard</span><span>25 g</span></div>
+        <div class="sangkap"><span>Margarine</span><span>12 g</span></div>
+    </div>
+    <div class="bahagi">
+        <h3>PALAMAN</h3>
+        <div class="sangkap"><span>Asukal</span><span>400 g</span></div>
+        <div class="sangkap"><span>Food color</span><span>Lemon yellow</span></div>
+        <div class="sangkap"><span>Tubig</span><span>4 1/2 can</span></div>
+        <div class="sangkap"><span>Pineapple tang</span><span>1/2 pack</span></div>
+        <div class="sangkap"><span>Margarine</span><span>50 g</span></div>
+    </div>
+    <div class="bahagi">
+        <h3>MIXTURE</h3>
+        <div class="sangkap"><span>Cornstarch</span><span>350 g</span></div>
+        <div class="sangkap"><span>Tubig</span><span>1 1/2 can</span></div>
+    </div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="kababayan" class="resipe-box">
+    <h2>KABABAYAN</h2>
+    <div class="sangkap"><span>Asukal</span><span>700 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>2 tbsp</span></div>
+    <div class="sangkap"><span>Baking soda</span><span>1/4 tbsp</span></div>
+    <div class="sangkap"><span>Food color</span><span>Egg yellow</span></div>
+    <div class="sangkap"><span>Eggs</span><span>1 pc</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <div class="sangkap"><span>Evap.</span><span>1/2 can</span></div>
+    <div class="sangkap"><span>Tubig</span><span>2 can</span></div>
+    <div class="sangkap"><span>Oil</span><span>1/2 can</span></div>
+    <div class="sangkap"><span>3rd class</span><span>1 kl</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="torta" class="resipe-box">
+    <h2>TORTA</h2>
+    <div class="sangkap"><span>Asukal</span><span>550 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>2 1/2 tbsp</span></div>
+    <div class="sangkap"><span>Skim milk</span><span>-</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <div class="sangkap"><span>Evap.</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Tubig</span><span>1 1/4 can</span></div>
+    <div class="sangkap"><span>Lard</span><span>50 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>25 g</span></div>
+    <div class="sangkap"><span>Oil</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>3rd class</span><span>1 kl</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="brownies" class="resipe-box">
+    <h2>BROWNIES ICING</h2>
+    <div class="sangkap"><span>Sugar</span><span>3 tbsp</span></div>
+    <div class="sangkap"><span>3rd class</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Skim milk</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Margarine</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Cocoa</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Oil</span><span>-</span></div>
+    <div class="sangkap"><span>Evap</span><span>-</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="eggpie" class="resipe-box">
+    <h2>EGG PIE (3 plates, 10 slice, size 8")</h2>
+    <div class="bahagi">
+        <h3>PABALAT</h3>
+        <div class="sangkap"><span>3rd class</span><span>600 g</span></div>
+        <div class="sangkap"><span>Asukal</span><span>200 g</span></div>
+        <div class="sangkap"><span>Lard</span><span>50 g</span></div>
+        <div class="sangkap"><span>Margarine</span><span>150 g</span></div>
+    </div>
+    <div class="bahagi">
+        <h3>PALAMAN</h3>
+        <div class="sangkap"><span>Water</span><span>2 3/4 cup</span></div>
+        <div class="sangkap"><span>Eggs</span><span>7 pcs</span></div>
+    </div>
+    <div class="bahagi">
+        <h3>MIXTURE</h3>
+        <div class="sangkap"><span>Milk buy</span><span>500 g</span></div>
+        <div class="sangkap"><span>Sugar</span><span>250 g</span></div>
+    </div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="yemma" class="resipe-box">
+    <h2>YEMMA ICING</h2>
+    <div class="sangkap"><span>Evaporada</span><span>1 can</span></div>
+    <div class="sangkap"><span>Cornstarch</span><span>2 tbsp</span></div>
+    <div class="sangkap"><span>Sugar</span><span>200 g</span></div>
+    <div class="sangkap"><span>Eggyolk</span><span>4 pcs</span></div>
+    <div class="sangkap"><span>Butter</span><span>1/4</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="pabalat" class="resipe-box">
+    <h2>PABALAT NG MALAMBOT</h2>
+    <div class="sangkap"><span>Sugar</span><span>650 g</span></div>
+    <div class="sangkap"><span>Salt</span><span>50 g</span></div>
+    <div class="sangkap"><span>Yeast</span><span>4 tbsp</span></div>
+    <div class="sangkap"><span>Water</span><span>5 can</span></div>
+    <div class="sangkap"><span>Lard</span><span>150 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>50 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="donutpalaman" class="resipe-box">
+    <h2>DONUT PALAMAN</h2>
+    <div class="sangkap"><span>Sugar</span><span>350 g</span></div>
+    <div class="sangkap"><span>Oil</span><span>kaunti/pweding wala</span></div>
+    <div class="sangkap"><span>Food color</span><span>chocolate/violet</span></div>
+    <div class="sangkap"><span>Flavocol</span><span>chocolate/violet</span></div>
+    <div class="sangkap"><span>Evap</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Water</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Margarine</span><span>30 g</span></div>
+    <div class="sangkap"><span>3rd class</span><span>1/2 kl</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="chess" class="resipe-box">
+    <h2>CHESS ROLL</h2>
+    <div class="sangkap"><span>3rd class</span><span>100 g</span></div>
+    <div class="sangkap"><span>1st class</span><span>900 g</span></div>
+    <div class="sangkap"><span>Sugar</span><span>1/4 kl</span></div>
+    <div class="sangkap"><span>Salt</span><span>12 g</span></div>
+    <div class="sangkap"><span>Yeast</span><span>1 1/2 tbsp</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>3/4 tbsp</span></div>
+    <div class="sangkap"><span>Evaporada</span><span>1/8 can</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <div class="sangkap"><span>Water</span><span>1 can</span></div>
+    <div class="sangkap"><span>Lard</span><span>35 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>15 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="crinkles" class="resipe-box">
+    <h2>CRINKLES</h2>
+    <div class="sangkap"><span>Sugar</span><span>650 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Baking soda</span><span>1/4 tbsp</span></div>
+    <div class="sangkap"><span>Cocoa powder orig.</span><span>100 g</span></div>
+    <div class="sangkap"><span>Flavocol</span><span>-</span></div>
+    <div class="sangkap"><span>Evap</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Water</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>3rd class</span><span>100 g</span></div>
+    <div class="sangkap"><span>1st class</span><span>450 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>200 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="donutchoco" class="resipe-box">
+    <h2>DONUT POWDER CHOCO</h2>
+    <div class="sangkap"><span>Skim milk</span><span>200 g</span></div>
+    <div class="sangkap"><span>Milk buy</span><span>50 g</span></div>
+    <div class="sangkap"><span>Peotracco</span><span>60 g</span></div>
+    <div class="sangkap"><span>Cocoa pow. orig.</span><span>2 tbsp</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="donutube" class="resipe-box">
+    <h2>DONUT POWDER UBE</h2>
+    <div class="sangkap"><span>Skim milk</span><span>200 g</span></div>
+    <div class="sangkap"><span>Milk buy</span><span>50 g</span></div>
+    <div class="sangkap"><span>Peotracco</span><span>50 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<div id="pandesal" class="resipe-box">
+    <h2>PANDESAL</h2>
+    <div class="sangkap"><span>1st class</span><span>2 kl</span></div>
+    <div class="sangkap"><span>Malunggay</span><span>-</span></div>
+    <div class="sangkap"><span>Sugar</span><span>1/2 kl</span></div>
+    <div class="sangkap"><span>Milk buy</span><span>2 tbsp</span></div>
+    <div class="sangkap"><span>Skim milk</span><span>-</span></div>
+    <div class="sangkap"><span>Asin</span><span>30 g</span></div>
+    <div class="sangkap"><span>Yeast</span><span>1/2 tbsp</span></div>
+    <div class="sangkap"><span>Oil</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Butter</span><span>-</span></div>
+    <div class="sangkap"><span>Margarine</span><span>50 g</span></div>
+    <div class="sangkap"><span>Water</span><span>2 can</span></div>
+    <div class="sangkap"><span>Evap</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+<!-- LAHAT NG PROSESO -->
+<div id="proc_bro" class="resipe-box">
+    <h2>PROSESO NG BROWNIES ICING</h2>
+    <div class="proseso">PAGSAMAHIN ANG DRY INGREDIENTS AT
+HALUIN NG MABUTI, ILAGAY ANG LIQUID
+ENGREDIENTS AT MARGARINE AT
+HALUING MABUTI, ISALANG SA APOY NA
+MAY MAHINANG-MAHINANG APOY AT HALUIN
+NANG HALUIN PARA HINDI MA-MUO O
+MASUNOG</div>
+    <a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a>
+</div>
+
+<div id="proc_pine" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_kaba" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_tor" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_egg" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_yem" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_pab" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_donpal" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_che" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_crin" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_doncho" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_donub" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_donub" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+
+<script>
+let aktibongMenu = 'mainMenu';
+
+function palitMenu(alin) {
+    document.getElementById('mainMenu').style.display = 'none';
+    document.getElementById('procMenu').style.display = 'none';
+    document.getElementById(alin).style.display = 'block';
+    aktibongMenu = alin;
+    // Itago lahat ng resipe
+    document.querySelectorAll('.resipe-box').forEach(b => b.style.display = 'none');
+}
+
+function ipakita(alin) {
+    document.getElementById('mainMenu').style.display = 'none';
+    document.getElementById('procMenu').style.display = 'none';
+    document.getElementById(alin).style.display = 'block';
+}
+
+function ipakitaProc(alin) {
+    document.getElementById('mainMenu').style.display = 'none';
+    document.getElementById('procMenu').style.display = 'none';
+    document.getElementById(alin).style.display = 'block';
+}
+
+function ibalik() {
+    document.querySelectorAll('.resipe-box').forEach(b => b.style.display = 'none');
+    document.getElementById('mainMenu').style.display = 'block';
+    aktibongMenu = 'mainMenu';
+}
+
+function ibalikProc() {
+    document.querySelectorAll('.resipe-box').forEach(b => b.style.display = 'none');
+    document.getElementById('procMenu').style.display = 'block';
+    aktibongMenu = 'procMenu';
+}
+
+</script>
+
+</body>
+</html>
