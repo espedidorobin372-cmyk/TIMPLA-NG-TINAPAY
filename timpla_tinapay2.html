@@ -78,7 +78,8 @@
     <a href="#" class="menu-item" onclick="ipakita('donutube'); return false;">[ B ] DONUT POWDER UBE</a>
     <a href="#" class="menu-item" onclick="ipakita('pandesal'); return false;">[ C ] PANDESAL</a>
     <a href="#" class="menu-item" onclick="ipakita('brownies1tray'); return false;">[ D ] BROWNIES 1 TRAY</a>
-    <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ E ] PROSESO</a>
+    <a href="#" class="menu-item" onclick="ipakita('cookies'); return false;">[ E ] COOKIES</a>
+    <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ F ] PROSESO</a>
 </div>
 <!-- MENU PARA SA PROSESO -->
 <div id="procMenu" style="display:none;">
@@ -103,7 +104,8 @@
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_donub'); return false;">[ B ] PROSESO NG DONUT POWDER UBE</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_pan'); return false;">[ C ] PROSESO NG PANDESAL</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_brow'); return false;">[ D ] PROSESO NG BROWNIES</a>
-    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ E ] BALIK SA MENU</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_cook'); return false;">[ E ] PROSESO NG COOKIES</a>
+    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ F ] BALIK SA MENU</a>
 </div>
 
 <!-- LAHAT NG RESIPE -->
@@ -314,6 +316,27 @@
     <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
 </div>
 
+<div id="cookies" class="resipe-box">
+    <h2>COOKIES</h2>
+    <div class="sangkap"><span>3rd class</span><span>1 1/4 kg</span></div>
+    <div class="sangkap"><span>Skim milkt</span><span>250 g</span></div>
+    <div class="sangkap"><span>Sugar</span><span>700 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span></span><span>1 1/2 tbsp</span></div>
+    <div class="sangkap"><span>Baking soda</span><span>1/4 tbsp</span></div>
+    <div class="sangkap"><span>Egg</span><span>1 pc</span></div>
+    <div class="sangkap"><span>Evap</span><span>1/2 can</span></div>
+    <div class="sangkap"><span>Water</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <div class="sangkap"><span>Lard</span><span>100 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>150 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>    
+<div class="bahagi">
+    <h3>TOPPINGS:</h3>
+    <div class="sangkap"><span>Chocolate</span><span>-</span></div>
+</div>
+    
+
 <!-- LAHAT NG PROSESO -->
 <div id="proc_bro" class="resipe-box">
     <h2>PROSESO NG BROWNIES ICING</h2>
@@ -339,6 +362,7 @@ MASUNOG</div>
 <div id="proc_doncho" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_donub" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_pan" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_brow" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_brow" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 
 <script>
