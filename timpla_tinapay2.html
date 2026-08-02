@@ -17,7 +17,7 @@
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(249, 220, 92, 0.3);
         }
-        h1 { text-align: center; margin-bottom: 25px; color: #80d8f7; font-size: 22px; }
+        h1 { text-align: center; margin-bottom: 25px; color: #5e09be; font-size: 22px; }
         .menu-item {
             display: block;
             color: #f9dc5c;
@@ -27,19 +27,19 @@
             border-radius: 4px;
             transition: 0.2s;
         }
-        .menu-item:hover { background: #333; color: #80d8f7; }
+        .menu-item:hover { background: #5951c4; color: #80d8f7; }
         .resipe-box {
-            background: #222;
+            background: #252525;
             padding: 20px;
             border-radius: 6px;
             margin-top: 15px;
             display: none;
             border-left: 3px solid #80d8f7;
         }
-        .resipe-box h2 { color: #80d8f7; margin-bottom: 15px; text-align: center; font-size: 18px; }
+        .resipe-box h2 { color: #3e20e4; margin-bottom: 15px; text-align: center; font-size: 18px; }
         .bahagi { margin-bottom: 15px; }
-        .bahagi h3 { margin-bottom: 8px; color: #f2b705; font-size: 15px; }
-        .sangkap { display: flex; justify-content: space-between; padding: 3px 0; font-size: 14px; }
+        .bahagi h3 { margin-bottom: 8px; color: #ec2a08; font-size: 16px; }
+        .sangkap { display: flex; justify-content: space-between; padding: 3px 0; font-size: 18px; }
         .balik {
             display: inline-block;
             margin-top: 20px;
@@ -57,8 +57,14 @@
 
 <!-- PANGUNAHING MENU -->
 <div id="mainMenu">
-    <h1>===============================<br>      PUMILI NG GUSTO      <br>===============================</h1>
-    <a href="#" class="menu-item" onclick="ipakita('pineapple'); return false;">[ 1 ] PINEAPPLE</a>
+<!--    <h1>=================<br>      PUMILI NG GUSTO      <br>=================</h1> -->
+<!-- PAMAGAT NA SAKTO LANG ANG GUHIT -->
+<div style="text-align: center; margin: 20px 0;">
+  <div style="display: inline-block; border-top: 3px solid #ffd700; border-bottom: 3px solid #ffd700; padding: 8px 20px;">
+    <span style="color: #9933ff; font-size: 22px; font-weight: bold;">PUMILI NG PROSESO</span>
+  </div>
+</div>    
+    <a href="#" class="menu-item" onclick="ipakita('pineapple'); return false;">[ 1 ] PINEAPPLE 1 TRAY</a>
     <a href="#" class="menu-item" onclick="ipakita('kababayan'); return false;">[ 2 ] KABABAYAN</a>
     <a href="#" class="menu-item" onclick="ipakita('torta'); return false;">[ 3 ] TORTA</a>
     <a href="#" class="menu-item" onclick="ipakita('brownies'); return false;">[ 4 ] BROWNIES ICING</a>
@@ -71,12 +77,18 @@
     <a href="#" class="menu-item" onclick="ipakita('donutchoco'); return false;">[ A ] DONUT POWDER CHOCO</a>
     <a href="#" class="menu-item" onclick="ipakita('donutube'); return false;">[ B ] DONUT POWDER UBE</a>
     <a href="#" class="menu-item" onclick="ipakita('pandesal'); return false;">[ C ] PANDESAL</a>
-    <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ D ] PROSESO</a>
+    <a href="#" class="menu-item" onclick="ipakita('brownies1tray'); return false;">[ D ] BROWNIES 1 TRAY</a>
+    <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ E ] PROSESO</a>
 </div>
-
 <!-- MENU PARA SA PROSESO -->
 <div id="procMenu" style="display:none;">
-    <h1>===============================<br>   PUMILI NG PROSESO   <br>===============================</h1>
+<!--    <h1>===================<br>   PUMILI NG PROSESO   <br>===================</h1> -->
+<!-- PAMAGAT NA SAKTO LANG ANG GUHIT -->
+<div style="text-align: center; margin: 20px 0;">
+  <div style="display: inline-block; border-top: 3px solid #ffd700; border-bottom: 3px solid #ffd700; padding: 8px 20px;">
+    <span style="color: #9933ff; font-size: 22px; font-weight: bold;">PUMILI NG PROSESO</span>
+  </div>
+</div>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_pine'); return false;">[ 1 ] PROSESO NG PINEAPPLE</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_kaba'); return false;">[ 2 ] PROSESO NG KABABAYAN</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_tor'); return false;">[ 3 ] PROSESO NG TORTA</a>
@@ -89,8 +101,9 @@
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_crin'); return false;">[ 0 ] PROSESO NG CRINKLES</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_doncho'); return false;">[ A ] PROSESO NG DONUT POWDER CHOCO</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_donub'); return false;">[ B ] PROSESO NG DONUT POWDER UBE</a>
-    <a href="#" class="menu-item" onclick="ipakitaProc('proc_donub'); return false;">[ C ] PROSESO NG PANDESAL</a>
-    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ D ] BALIK SA MENU</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_pan'); return false;">[ C ] PROSESO NG PANDESAL</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_brow'); return false;">[ D ] PROSESO NG BROWNIES</a>
+    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ E ] BALIK SA MENU</a>
 </div>
 
 <!-- LAHAT NG RESIPE -->
@@ -288,6 +301,19 @@
     <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
 </div>
 
+<div id="brownies1tray" class="resipe-box">
+    <h2>BROWNIES</h2>
+    <div class="sangkap"><span>Sugar</span><span>350 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Yeast</span><span>1/2 tbsp</span></div>
+    <div class="sangkap"><span>Food color</span><span>Chocolate brown</span></div>
+    <div class="sangkap"><span>Oil</span><span>1/4 can</span></div>
+    <div class="sangkap"><span>evap</span><span>-</span></div>
+    <div class="sangkap"><span>Water</span><span>1 1/2 can</span></div>
+    <div class="sangkap"><span>1st class</span><span>700 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
 <!-- LAHAT NG PROSESO -->
 <div id="proc_bro" class="resipe-box">
     <h2>PROSESO NG BROWNIES ICING</h2>
@@ -312,7 +338,8 @@ MASUNOG</div>
 <div id="proc_crin" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_doncho" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_donub" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
-<div id="proc_donub" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_pan" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_brow" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 
 <script>
 let aktibongMenu = 'mainMenu';
