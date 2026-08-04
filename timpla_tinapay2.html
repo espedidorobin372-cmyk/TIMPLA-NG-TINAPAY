@@ -82,6 +82,7 @@
     <a href="#" class="menu-item" onclick="ipakita('pinagongtigas'); return false;">[ 16 ] PINAGONG TIGAS</a>
     <a href="#" class="menu-item" onclick="ipakita('lambingan'); return false;">[ 17 ] LAMBINGAN</a>
     <a href="#" class="menu-item" onclick="ipakita('custardcake'); return false;">[ 18 ] CUSTARD CAKE 1 ROUND PAN</a>
+    <a href="#" class="menu-item" onclick="ipakita('pianonorolls'); return false;">[ 18 ] CUSTARD CAKE 1 ROUND PAN</a>
     <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;">[ 19 ] PROSESO</a>
 </div>
 <!-- MENU PARA SA PROSESO -->
@@ -111,7 +112,8 @@
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_pin'); return false;">[ 16 ] PROSESO NG PINAGONG TIGAS</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_lamb'); return false;">[ 17 ] PROSESO NG LAMBINGAN</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_custrd'); return false;">[ 18 ] PROSESO NG CUSTARD CAKE</a>
-    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ 19 ] BALIK SA MENU</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_pianorol'); return false;">[ 19 ] PROSESO NG PIANONO ROLLS</a>
+    <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;">[ 20 ] BALIK SA MENU</a>
 </div>
 
 <!-- LAHAT NG RESIPE -->
@@ -395,8 +397,8 @@
         <div class="sangkap"><span>Oil</span><span>1/8 cup</span></div>
         <div class="sangkap"><span>Water</span><span>3/8 cup</span></div>
         <div class="sangkap"><span>Sugar</span><span>40 g</span></div>
-        <div class="sangkap"><span>Cake flour</span><span>150 g</span></div>
         <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+        <div class="sangkap"><span>Cake flour</span><span>150 g</span></div>
     </div>
     <div class="bahagi">
         <h3>LECHE PLAN</h3>
@@ -405,6 +407,27 @@
         <div class="sangkap"><span>Eggyolk</span><span>2 pcs</span></div>
         <div class="sangkap"><span>Eggwhole</span><span>1 pc</span></div>
         <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    </div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
+    <div id="pianonorolls" class="resipe-box">
+    <h2>PIANONO ROLLS 2 TRAY</h2>
+    <div class="bahagi">
+        <h3>MIXTURE 1</h3>
+        <div class="sangkap"><span>Eggwhite</span><span>6 pcs</span></div>
+        <div class="sangkap"><span>Sugar</span><span>154 g</span></div>
+    </div>
+    <div class="bahagi">
+        <h3>MIXTURE 2</h3>
+        <div class="sangkap"><span>Eggyolk</span><span>6 pcs</span></div>
+        <div class="sangkap"><span>Baking calumet</span><span>1/4 tbsp</span></div>
+        <div class="sangkap"><span>Baking soda</span><span>1/4 tbsp</span></div>
+        <div class="sangkap"><span>Oil</span><span>1/8 cup (mahigit)</span></div>
+        <div class="sangkap"><span>Water</span><span>1/2 cup</span></div>
+        <div class="sangkap"><span>Sugar</span><span>73 g</span></div>
+        <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+        <div class="sangkap"><span>Cake flour</span><span>200 g</span></div>
     </div>
     <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
 </div>
@@ -440,6 +463,7 @@ MASUNOG</div>
 <div id="proc_pin" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_lamb" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 <div id="proc_custrd" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
+<div id="proc_pianorol" class="resipe-box"><h2>WALA PANG NAKALAGAY NA PROSESO</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PROSESO</a></div>
 
 <script>
 let aktibongMenu = 'mainMenu';
