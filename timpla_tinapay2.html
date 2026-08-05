@@ -55,10 +55,7 @@
 </head>
 <body>
 
-<!-- PANGUNAHING MENU -->
 <div id="mainMenu">
-<!--    <h1>=================<br>      PUMILI NG GUSTO      <br>=================</h1> -->
-<!-- PAMAGAT NA SAKTO LANG ANG GUHIT -->
 <div style="text-align: center; margin: 20px 0;">
   <div style="display: inline-block; border-top: 3px solid #ffd700; border-bottom: 3px solid #ffd700; padding: 8px 20px;">
     <span style="color: #9933ff; font-size: 22px; font-weight: bold;">PUMILI NG MENU</span>
@@ -86,10 +83,7 @@
     <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;" style="color:#00ffff;">[ Q ] PARAAN NG PAGGAWA</a>
     <a href="larawan_ng_tinapay_menu.html" class="menu-item" style="color:#ff99ff;">[ W ] TINGNAN ANG LARAWAN</a>
 </div>
-<!-- MENU PARA SA PROSESO -->
 <div id="procMenu" style="display:none;">
-<!--    <h1>===================<br>   PUMILI NG PROSESO   <br>===================</h1> -->
-<!-- PAMAGAT NA SAKTO LANG ANG GUHIT -->
 <div style="text-align: center; margin: 20px 0;">
   <div style="display: inline-block; border-top: 3px solid #ffd700; border-bottom: 3px solid #ffd700; padding: 8px 20px;">
     <span style="color: #9933ff; font-size: 22px; font-weight: bold;">PUMILI NG PARAAN NG PAGGAWA</span>
@@ -117,7 +111,6 @@
     <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;" style="color:cyan;">[ R ] BALIK SA MENU</a>
 </div>
 
-<!-- LAHAT NG RESIPE -->
 <div id="pineapple" class="resipe-box">
     <h2>PINEAPPLE PIE 1 TRAY</h2>
     <div class="bahagi">
@@ -435,8 +428,6 @@
     <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
 </div>
    
-
-<!-- LAHAT NG PROSESO -->
 <div id="proc_bro" class="resipe-box">
     <h2>PARAAN NG PAGGAWA NG BROWNIES ICING</h2>
     <div class="proseso">PAGSAMAHIN ANG DRY INGREDIENTS AT
@@ -495,7 +486,6 @@ function palitMenu(alin) {
     document.getElementById('procMenu').style.display = 'none';
     document.getElementById(alin).style.display = 'block';
     aktibongMenu = alin;
-    // Itago lahat ng resipe
     document.querySelectorAll('.resipe-box').forEach(b => b.style.display = 'none');
 }
 
