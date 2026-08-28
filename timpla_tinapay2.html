@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <div class="logo-container">
+        <img src="tiger-logo.jpg" alt="Timpla ng Tinapay Logo" class="tinapay-logo">
+    </div>
+    
     <title>Timpla ng Tinapay - Aking Resipe</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,6 +57,21 @@
         .balik:hover { color: #f9dc5c; border-color: #f9dc5c; }
         .proseso { line-height: 1.6; color: #ddd; white-space: pre-line; }
         .sangkap:hover { color: blue; border-color: blue; }
+
+ .logo-container {
+    display: flex; /* I-align ang logo sa kanan */
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 20px; /* I-align ang logo sa kanan */
+}
+
+.bakery-logo { /* ang image ng logo */
+    width: 500px;
+    height: 300px;
+    border-radius: 10%; /* Gawing pabilog */
+    border: 3px dotted #2b5b42; /* Kulay green na border gaya ng tema */
+    object-fit: cover;
+}
     </style>
 
     <link rel="icon" href="Bakery.ico" type="image/x-icon">
