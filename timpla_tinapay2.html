@@ -51,6 +51,7 @@
         }
         .balik:hover { color: #f9dc5c; border-color: #f9dc5c; }
         .proseso { line-height: 1.6; color: #ddd; white-space: pre-line; }
+        .sangkap:hover { color: yellow; border-color: yellow
     </style>
 
     <link rel="icon" href="Bakery.ico" type="image/x-icon">
@@ -84,6 +85,7 @@
     <a href="#" class="menu-item" onclick="ipakita('custardcake'); return false;">[ 18 ] CUSTARD CAKE</a>
     <a href="#" class="menu-item" onclick="ipakita('pianonorolls'); return false;">[ 19 ] PIANONO ROLLS</a>
     <a href="#" class="menu-item" onclick="ipakita('lakas'); return false;">[ 20 ] LAKAS/UBE BAR</a>
+    <a href="#" class="menu-item" onclick="ipakita('cupcake'); return false;">[ 21 ] CUP CAKES</a>
     <a href="#" class="menu-item" onclick="palitMenu('procMenu'); return false;" style="color:#00ffff;">[ Q ] PARAAN NG PAGGAWA</a>
     <a href="larawan_ng_tinapay_menu.html" class="menu-item" style="color:#ff99ff;">[ W ] TINGNAN ANG LARAWAN</a>
 </div>
@@ -113,6 +115,7 @@
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_custrd'); return false;">[ 18 ] CUSTARD CAKE</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_pianorol'); return false;">[ 19 ] PIANONO ROLLS</a>
     <a href="#" class="menu-item" onclick="ipakitaProc('proc_strong'); return false;">[ 20 ] LAKAS/UBE BAR</a>
+    <a href="#" class="menu-item" onclick="ipakitaProc('proc_cupck'); return false;">[ 21 ] CUP CAKES</a>
     <a href="#" class="menu-item" onclick="palitMenu('mainMenu'); return false;" style="color:cyan;">[ R ] BALIK SA MENU</a>
 </div>
 
@@ -451,6 +454,23 @@
     <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
 </div>
 
+<div id="cupcake" class="resipe-box">
+    <h2>CUP CAKE</h2>
+    <div class="sangkap"><span>Asukal</span><span>500 g</span></div>
+    <div class="sangkap"><span>Baking calumet</span><span>1 tbsp</span></div>
+    <div class="sangkap"><span>Baking soda</span><span>1/2 tbsp</span></div>
+    <div class="sangkap"><span>Flavor</span><span>-</span></div>
+    <div class="sangkap"><span>Alaska evap</span><span>1/2 can</span></div>
+    <div class="sangkap"><span>Tubig</span><span>1/2 can</span></div>
+    <div class="sangkap"><span>Vanilla</span><span>-</span></div>
+    <div class="sangkap"><span>Itlog</span><span>4 pcs</span></div>
+    <div class="sangkap"><span>Lard</span><span>100 g</span></div>
+    <div class="sangkap"><span>Margarine</span><span>100 g</span></div>
+    <div class="sangkap"><span>Cake flour</span><span>500 g</span></div>
+    <div class="sangkap"><span>1st class</span><span>100 g</span></div>
+    <a href="#" class="balik" onclick="ibalik(); return false;">⬅ BALIK SA MENU</a>
+</div>
+
 <div id="proc_egg" class="resipe-box">
     <h2>PARAAN NG PAGGAWA NG EGG PIE</h2>
     <div class="proseso">GUMAWA MUNA NG PABALAT UNAHIN
@@ -520,7 +540,8 @@ OVEN NA MAY KATAMTAMANG APOY
 <div id="proc_custrd" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
 <div id="proc_pianorol" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
 <div id="proc_strong" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
-
+<div id="proc_cupck" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
+    
 <script>
 let aktibongMenu = 'mainMenu';
 
