@@ -52,9 +52,28 @@
         .balik:hover { color: #f9dc5c; border-color: #f9dc5c; }
         .proseso { line-height: 1.6; color: #ddd; white-space: pre-line; }
         .sangkap:hover { color: blue; border-color: blue; }
+
+        .lugar {
+            background: linear-gradient(90deg, #e63946, #ff6b6b);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+        }
+        .gumagalaw {
+            position: absolute;
+            white-space: nowrap;
+            top: 15px;
+        }
     </style>
 
     <link rel="icon" href="Bakery.ico" type="image/x-icon">
+    <div class="lugar">
+        <div class="gumagalaw" id="teksto">✨ WELLCOME! ✨</div>
+    </div>
 </head>
 <body>
 
@@ -540,7 +559,27 @@ OVEN NA MAY KATAMTAMANG APOY
 <div id="proc_pianorol" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
 <div id="proc_strong" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
 <div id="proc_cupck" class="resipe-box"><h2>WALA PANG NAKALAGAY PARA SA PARAAN NG PAGGAWA</h2><a href="#" class="balik" onclick="ibalikProc(); return false;">⬅ BALIK SA PARAAN NG PAGGAWA</a></div>
-    
+<script>
+const teksto = document.getElementById('teksto');
+let posisyon = window.innerWidth; // Simula: nasa labas sa kanan
+const bilis = 1.5; // Mas malaki → mas mabilis
+
+function ilipat() {
+    // Ilipat pakaliwa nang dahan-dahan
+    posisyon -= bilis;
+    teksto.style.left = posisyon + 'px';
+
+    // Kapag lumabas na sa kaliwa → ibalik sa kanan
+    if (posisyon < -teksto.offsetWidth) {
+        posisyon = window.innerWidth;
+    }
+
+    requestAnimationFrame(ilipat);
+}
+
+// Simulan!
+ilipat();
+</script>    
 <script>
 let aktibongMenu = 'mainMenu';
 
