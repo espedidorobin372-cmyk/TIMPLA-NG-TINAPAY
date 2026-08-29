@@ -45,12 +45,29 @@
             border: 1px solid #444;
             border-radius: 4px;
         }
+        .lugar {
+            background: linear-gradient(90deg, #e63946, #ff6b6b);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+        }
+        .gumagalaw {
+            position: absolute;
+            white-space: nowrap;
+            top: 15px;
+        }
         .balik:hover { color: #ff99ff; border-color: #ff99ff; }
     </style>
      <link rel="icon" href="Bakery.ico" type="image/x-icon">
 </head>
 <body>
-
+<div class="lugar">
+        <div class="gumagalaw" id="teksto">✨ WELLCOME! ✨</div>
+</div>
 <div class="pamagat">MGA LARAWAN NG TINAPAY</div>
 
 <a href="larawan_pineapple.html" class="item">[ 1 ] PINEAPPLE PIE</a>
@@ -85,6 +102,26 @@
 <a href="larawan_empty.html" class="item">[ 30 ] WALA PA LAMAN</a>
 
 <a href="timpla_tinapay2.html" class="balik">⬅ BALIK SA RESIPE</a>
+<script>
+const teksto = document.getElementById('teksto');
+let posisyon = window.innerWidth; // Simula: nasa labas sa kanan
+const bilis = 1.5; // Mas malaki → mas mabilis
 
+function ilipat() {
+    // Ilipat pakaliwa nang dahan-dahan
+    posisyon -= bilis;
+    teksto.style.left = posisyon + 'px';
+
+    // Kapag lumabas na sa kaliwa → ibalik sa kanan
+    if (posisyon < -teksto.offsetWidth) {
+        posisyon = window.innerWidth;
+    }
+
+    requestAnimationFrame(ilipat);
+}
+
+// Simulan!
+ilipat();
+</script>
 </body>
 </html>
